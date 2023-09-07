@@ -3,11 +3,11 @@ import 'dart:convert';
 import 'dart:io';
 
 class TranlationStringExtractor {
-  static final RegExp _re1 = RegExp(r"'([^']+)'[ \t\r\n]*\.tr");
-  static final RegExp _re2 = RegExp(r'"([^"]+)"[ \t\r\n]*\.tr');
+  static final RegExp _re1 = RegExp(r"'([^']+)'\s*\.tr");
+  static final RegExp _re2 = RegExp(r'"([^"]+)"\s*\.tr');
 
-  static final RegExp _re3 = RegExp(r"'''((.|\r|\n)*?)'''[ \t\r\n]*\.tr");
-  static final RegExp _re4 = RegExp(r'"""((.|\r|\n)*?)"""[ \t\r\n]*\.tr');
+  static final RegExp _re3 = RegExp(r"'''([^']+?)'''\s*\.tr");
+  static final RegExp _re4 = RegExp(r'"""([^"]+?)"""\s*\.tr');
   static final List<RegExp> regexes = [_re1, _re2, _re3, _re4];
 
   static void extractStrings(String directory, String outputFile,
