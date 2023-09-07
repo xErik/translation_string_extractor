@@ -2,6 +2,8 @@
 
 Extracts strings marked for translation with `.tr` or `.tr()` and writes them into JSON file or returns a Map.
 
+The tool will ignore file names ending in `.g.dart`.
+
 Input: 
 
 ```dart

@@ -19,7 +19,8 @@ class TranlationStringExtractor {
 
     for (final FileSystemEntity entity in Directory(directory)
         .listSync(recursive: true)
-        .where((element) => element.path.endsWith('.dart'))) {
+        .where((element) => element.path.endsWith('.dart'))
+        .where((element) => element.path.endsWith('.g.dart') == false)) {
       if (entity is File) {
         final content = File(entity.path).readAsStringSync();
         for (final RegExp regex in regexes) {
