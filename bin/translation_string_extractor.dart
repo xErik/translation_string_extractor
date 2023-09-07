@@ -1,6 +1,7 @@
 import 'package:args/args.dart';
 import 'package:translation_string_extractor/translation_string_extractor.dart';
 
+/// Binary wrapper.
 void main(List<String> arguments) {
   final argParser = ArgParser()
     ..addOption('dir', abbr: 'd', defaultsTo: './lib')
