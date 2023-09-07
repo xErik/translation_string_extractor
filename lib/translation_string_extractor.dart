@@ -3,11 +3,11 @@ import 'dart:convert';
 import 'dart:io';
 
 class TranlationStringExtractor {
-  static final RegExp _re1 = RegExp("'([^']+)'[ \t\r\n]*.tr");
-  static final RegExp _re2 = RegExp('"([^"]+)"[ \t\r\n]*.tr');
+  static final RegExp _re1 = RegExp(r"'([^']+)'[ \t\r\n]*\.tr");
+  static final RegExp _re2 = RegExp(r'"([^"]+)"[ \t\r\n]*\.tr');
 
-  static final RegExp _re3 = RegExp("'''((.|\r|\n)*?)'''[ \t\r\n]*\.tr");
-  static final RegExp _re4 = RegExp('"""((.|\r|\n)*?)"""[ \t\r\n]*\.tr');
+  static final RegExp _re3 = RegExp(r"'''((.|\r|\n)*?)'''[ \t\r\n]*\.tr");
+  static final RegExp _re4 = RegExp(r'"""((.|\r|\n)*?)"""[ \t\r\n]*\.tr');
   static final List<RegExp> regexes = [_re1, _re2, _re3, _re4];
 
   static void extractStrings(String directory, String outputFile,
@@ -33,14 +33,20 @@ class TranlationStringExtractor {
 
             if (extract != null) {
               map.putIfAbsent(extract, () => extract);
+              fileMatchCount++;
             }
           }
         }
-        if (isVerbose) {
-          print(entity.path + '\t' + fileMatchCount.toString() + ' matches');
+        if (isVerbose && fileMatchCount > 0) {
+          print(fileMatchCount.toString() + ' strings' + '\t' + entity.path);
         }
       }
     }
+
+    if (isVerbose) {
+      print(map.keys.length.toString() + ' unique strings');
+    }
+
     return map;
   }
 
