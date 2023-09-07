@@ -40,21 +40,21 @@ dev_dependencies:
 
 Or install the package globally:
 
-```bash
+```shell
 dart pub global activate translation_string_extractor
 ```
 ## Usage
 
 As a dev dependency:
 
-```bash 
+```shell 
 dart run translation_string_extractor:extract -d=lib -o=locale.json
 ```
 
 Globally:
 
-```bash
-translation_string_extractor ./lib output.json
+```shell
+translation_string_extractor -d=lib -o=locale.json
 ```
 
 Public Signature:

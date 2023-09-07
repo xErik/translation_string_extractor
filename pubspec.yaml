@@ -1,5 +1,5 @@
 name: translation_string_extractor
-version: 0.0.1+1
+version: 0.0.1+2
 description: Extracts .tr and .tr() strings from a project into a JSON file or returns a Map
 environment:
   sdk: ">=3.0.0 <4.0.0"

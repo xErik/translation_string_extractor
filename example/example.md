@@ -10,5 +10,5 @@ Globally:
 
 ```bash
 dart pub global activate translation_string_extractor
-translation_string_extractor ./lib output.json
+translation_string_extractor -d=lib -o=locale.json
 ```
