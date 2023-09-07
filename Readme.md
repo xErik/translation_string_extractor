@@ -71,7 +71,7 @@ static void write(Map<String, String> map, String outputFile);
 
 ## Issues
 
-
+https://github.com/xErik/translation_string_extractor/issues
 
 ## License
 
